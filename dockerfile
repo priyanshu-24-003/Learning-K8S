@@ -9,13 +9,12 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Copy only the required files
-COPY requirements.txt /app/
 COPY app.py /app/
 COPY templates /app/templates
 COPY static /app/static
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install flask
 
 # Expose the port the app runs on
 EXPOSE 5000
